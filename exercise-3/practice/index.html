@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #one {
+        background-color: aqua;
+        border: 1px double black;
+        font-size: 1rem;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+      #two {
+        background-color: antiquewhite;
+        border: 1px dotted black;
+        font-size: 1rem;
+        font-family: "Times New Roman", Times, serif;
+      }
+      #three {
+        background-color: aqua;
+        border: 5px ridge black;
+        font-size: 1rem;
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+      #four {
+        background-color: black;
+        border: 6px groove grey;
+        font-size: 1rem;
+        font-family: "Times New Roman", Times, serif;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="one">Hi</p>
+    <p id="two">Hi2</p>
+    <p id="three">Hi3</p>
+    <p id="four">Hi4</p>
+  </body>
+  <script>
+    console.log(document.querySelector("p"));
+    console.log(document.querySelector("#one"));
+    console.log(document.querySelector("#two"));
+    console.log(document.querySelector("#three"));
+    console.log(document.querySelector("#four"));
+    console.log(document.querySelectorAll("p"));
+    document.querySelectorAll("p").forEach((k, ind) => {
+      console.log(k.innerText);
+      if (ind % 2 == 0) {
+        k.style.color = "green";
+      } else {
+        k.style.color = "red";
+      }
+    });
+  </script>
+</html>

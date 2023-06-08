@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body class="body">
+    <div class="form">
+      <div class="input">
+        <input id="output" type="text" disabled></input>
+      </div>
+      <div class="buttons">
+        <p class="button" onclick="handleClick(event)" id="1">1</p>
+        <p class="button" onclick="handleClick(event)" id="2">2</p>
+        <p class="button" onclick="handleClick(event)" id="3">3</p>
+        <p class="button" onclick="handleClick(event)" id="4">4</p>
+        <p class="button" onclick="handleClick(event)" id="5">5</p>
+        <p class="button" onclick="handleClick(event)" id="6">6</p>
+        <p class="button" onclick="handleClick(event)" id="7">7</p>
+        <p class="button" onclick="handleClick(event)" id="8">8</p>
+        <p class="button" onclick="handleClick(event)" id="9">9</p>
+        <p class="button" onclick="handleClick(event)" id="0">0</p>
+        <p class="button" onclick="handleClick(event)" id=".">.</p>
+        <p class="button" onclick="handleClick(event)" id="+">+</p>
+        <p class="button" onclick="handleClick(event)" id="-">-</p>
+        <p class="button" onclick="handleClick(event)" id="*">*</p>
+        <p class="button" onclick="handleClick(event)" id="/">/</p>
+        <p class="button" onclick="handleClick(event)" id="^">^</p>
+        <p class="button" onclick="handleClick(event)" id="(">(</p>
+        <p class="button" onclick="handleClick(event)" id=")">)</p>
+        <p class="button" onclick="handleClick(event)" id="sin">sin</p>
+        <p class="button" onclick="handleClick(event)" id="cos">cos</p>
+        <p class="button" onclick="handleClick(event)" id="tan">tan</p>
+        <p class="button" onclick="handleClick(event)" id="log">log</p>
+        <p class="button" onclick="handleClick(event)" id="log10">log10</p>
+        <p class="button" onclick="handleClick(event)" id="sqrt">sqrt</p>
+        <p class="button" onclick="handleClick(event)" id="abs">abs</p>
+        <p class="button" onclick="handleClick(event)" id="!">fact</p>
+        <p class="button" onclick="handleClick(event)" id="round">round</p>
+        <p class="button" onclick="handleClear()">Clear</p>
+        <p class="button" onclick="handleClick(event)" id="backspace">Del</p>
+      </div>
+      <p class="submit" onclick="handleSubmit()">Calculate</p>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

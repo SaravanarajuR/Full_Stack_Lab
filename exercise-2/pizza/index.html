@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="./index.css" />
+    <script
+      src="https://kit.fontawesome.com/83a6740aac.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="shop">
+      <div class="menu">
+        <div class="header" onclick="showCart()">
+          <h1>Place your orders</h1>
+          <div class="button cartMenu">
+            <span class="fa-solid fa-cart-shopping"> Cart</span>
+          </div>
+        </div>
+        <div id="cart">Click to remove items from cart<div id="cart-inner"></div></div>
+        <div class="small category" id="99">
+          <img
+            src="https://pizzaparadize.com/wp-content/uploads/2016/06/Mini-Veg-Pizza.jpg"
+            class="img"
+          />
+          <div>
+            <p class="font">Small</p>
+            <p class="font price"><span>&#8377;</span>99</p>
+          </div>
+          <div>
+            <div>
+              <label for="mush">Mushrooms</label>
+              <input class="mush" value="15" name="mush" type="checkbox" />
+            </div>
+            <div>
+              <label for="olives">Olives</label>
+              <input name="olives" class="olives" type="checkbox" />
+            </div>
+            <div>
+              <label for="nail">Finfernail</label>
+              <input name="nail" class="nail" type="checkbox" />
+            </div>
+            <div>
+              <label for="beef">Spicy beef</label>
+              <input name="beef" class="beef" type="checkbox" />
+            </div>
+          </div>
+          <div>
+            <div>
+              <label for="pan">Deep pan</label>
+              <input name="pan" class="pan" type="checkbox" />
+            </div>
+            <div>
+              <label for="delivery">Delivery</label>
+              <input name="delivery" class="delivery" type="checkbox" />
+            </div>
+          </div>
+          <div onclick="handleSubmit(event)" id="small" class="button">+</div>
+        </div>
+        <div class="medium category" id="199">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs4oNN8t1uXKHaQQ1wc-C0T69-XQJgdyOP9NuPRU0OMrqN6RyYp8yDTDZyhgZSQe6_kQ8&usqp=CAU"
+            class="img"
+          />
+          <div>
+            <p class="font">Medium</p>
+            <p class="font"><span>&#8377;</span>199</p>
+          </div>
+          <div>
+            <div>
+              <label for="mush">Mushrooms</label>
+              <input class="mush" name="mush" type="checkbox" />
+            </div>
+            <div>
+              <label for="olives">Olives</label>
+              <input name="olives" class="olives" type="checkbox" />
+            </div>
+            <div>
+              <label for="nail">Finfernail</label>
+              <input name="nail" class="nail" type="checkbox" />
+            </div>
+            <div>
+              <label for="beef">Spicy beef</label>
+              <input name="beef" class="beef" type="checkbox" />
+            </div>
+          </div>
+          <div>
+            <div>
+              <label for="pan">Deep pan</label>
+              <input name="pan" class="pan" type="checkbox" />
+            </div>
+            <div>
+              <label for="delivery">Delivery</label>
+              <input name="delivery" class="delivery" type="checkbox" />
+            </div>
+          </div>
+          <div onclick="handleSubmit(event)" id="medium" class="button">+</div>
+        </div>
+        <div class="large category" id="399">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi3DQYlJtubp88mE4FuiUqbYqJz3XIXdNeDg&usqp=CAU"
+            class="img"
+          />
+          <div>
+            <p class="font">Large</p>
+            <p class="font"><span>&#8377;</span>399</p>
+          </div>
+          <div>
+            <div>
+              <label for="mush">Mushrooms</label>
+              <input class="mush" value="15" name="mush" type="checkbox" />
+            </div>
+            <div>
+              <label for="olives">Olives</label>
+              <input name="olives" class="olives" type="checkbox" />
+            </div>
+            <div>
+              <label for="nail">Finfernail</label>
+              <input name="nail" class="nail" type="checkbox" />
+            </div>
+            <div>
+              <label for="beef">Spicy beef</label>
+              <input name="beef" class="beef" type="checkbox" />
+            </div>
+          </div>
+          <div>
+            <div>
+              <label for="pan">Deep pan</label>
+              <input name="pan" class="pan" type="checkbox" />
+            </div>
+            <div>
+              <label for="delivery">Delivery</label>
+              <input name="delivery" class="delivery" type="checkbox" />
+            </div>
+          </div>
+          <div onclick="handleSubmit(event)" id="large" class="button">+</div>
+        </div>
+        <div>
+        <label for="bill">Bill <span>&#8377</span></label>
+        <input class="button" id="bill" value="0" disabled></input>
+        </div><p onclick="handleOrder()" class="button">Order</p>
+      </div>
+    </div> 
+    <script src="./index.js"></script>
+  </body>
+</html>

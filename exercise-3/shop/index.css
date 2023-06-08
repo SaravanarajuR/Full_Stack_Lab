@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  background-color: rgb(86, 155, 160);
+  margin: 20px;
+}
+#preview {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  background-color: black;
+}
+input {
+  padding: 6px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border:none;
+}
+.parent {
+  padding-top: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255, 0.2);
+  justify-content: center;
+  align-items: center;
+  box-shadow: 6px 7px 4px 4px rgb(0,0,0,0.3);
+}
+img {
+  border: 1px solid white;
+  width: 200px;
+  height: 200px;
+}
+button {
+  width: 180px;
+  height: 40px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.2rem;
+  border-radius: 3px;
+  background-color: rgb(41, 163, 172);
+  color:white;
+  border: none;
+  box-shadow: 3px 3px 2px rgb(0,0,0,0.4);
+  cursor:pointer;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+#products {
+  color: white;
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+hr {
+  width: 80%;
+  margin: 3%;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  align-items: center;
+  justify-content: center;
+}
+
+.innerparent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.headFile {
+  background-color: aliceblue;
+  color: black;
+  font-size: 1rem;
+  padding: 7px;
+}
+.inputFile {
+  padding: 10px;
+  align-items: center;
+  width: auto;
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+  background-color: black;
+  border: 1px solid white;
+  font-size: 0.6rem;
+  align-items: center;
+  gap: 10px;
+}
+.value {
+  width: 250px;
+  height: 30px;
+  border-radius: 7px;
+}
+#display {
+  background-color: rgba(255,255,255,0.2);
+  padding:20px;
+  margin-bottom:20px;
+  position: relative;
+  color: black;
+}
+@media (max-width: 400px) {
+  .inputFile {
+    flex-direction: column;
+  }
+  .parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.productName {
+  font-size: 1rem;
+  font-style: bold;
+  margin-bottom:0;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.productPrice {
+  font-size: 1.5rem;
+  margin-top:4px;
+}
+
+.removeProduct {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+}

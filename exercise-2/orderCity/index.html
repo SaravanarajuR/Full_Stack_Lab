@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body onload="handleRender()">
+    <div class="body">
+      <form>
+        <div class="contents">
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name" />
+        </div>
+        <div class="contents">
+          <label for="address">Address</label>
+          <input id="add" type="text" name="address" />
+        </div>
+        <div class="contents">
+          <select id="drop" onchange="chooseCity()"></select>
+        </div>
+        <div class="contents">
+          <div id="count">
+            <input id="city" value="Choose a city" disabled />
+          </div>
+        </div>
+        <div id="orderDetails"></div>
+        <button onclick="addOrder(event)">Submit</button>
+      </form>
+      <button onclick="handleSubmit(event)">Confirm Orders and Checkout</button>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

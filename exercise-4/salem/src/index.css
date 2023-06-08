@@ -1,0 +1,50 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #643843;
+  margin: 0;
+}
+#root {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button {
+  background-color: #e7cbcb;
+  padding: 8px 22px;
+  border: none;
+  border-radius: 3px;
+}
+img {
+  width: 200px;
+  height: 200px;
+}
+input {
+  font-size: 15px;
+  max-width: auto;
+  text-align: center;
+  padding: 3px;
+}
+.App {
+  border-radius: 10px;
+  width: 70%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+  background-color: #e7cbcb;
+  padding: 4%;
+}
+.prod {
+  border-radius: 7px;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #643843;
+}

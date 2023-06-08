@@ -1,0 +1,46 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(222, 171, 171);
+}
+
+section {
+  width: auto;
+  height: auto;
+  background: linear-gradient(
+    to top left,
+    rgb(179, 81, 82) 25%,
+    rgb(213, 124, 126) 75%
+  );
+  padding: 6%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 20px;
+}
+
+.form-group {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  grid-gap: 10px;
+}
+.btn {
+  padding: 5px 40px;
+}
+.tasksFont {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+textarea {
+  font-weight: 600;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}

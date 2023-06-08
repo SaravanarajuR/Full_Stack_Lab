@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electric bill</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <form>
+      <div>
+        <label for="input">Enter the Consumed units</label>
+        <input id="input" type="number" />
+      </div>
+      <button>Submit</button>
+    </form>
+    <div id="outputDiv">
+      <div class="input">
+        <input class="consume head" value="Consumed Units:" disabled />
+        <input class="consume out" id="consume" disabled />
+      </div>
+      <div class="input">
+        <input class="head" value="Total current Charges Rs." disabled />
+        <input class="out" id="total" disabled />
+      </div>
+      <div class="input">
+        <input class="head" value="Current Charges" disabled />
+        <input class="out" id="current" disabled />
+      </div>
+      <div class="input">
+        <input class="head" value="Fixed Charges(+)" disabled />
+        <input class="out" id="fixed" disabled />
+      </div>
+      <div class="input">
+        <input class="head" value="Subsidy Fixed Cost Rs.(-)" disabled />
+        <input id="subsidy" class="out" disabled />
+      </div>
+      <div class="input">
+        <input class="head" value="New Subsidy Rs(-):" disabled />
+        <input class="out" id="new" disabled />
+      </div>
+      <div class="input">
+        <input class="head" value="Net Amount Rs." disabled />
+        <input class="out" id="net" disabled />
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

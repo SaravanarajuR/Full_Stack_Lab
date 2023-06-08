@@ -1,0 +1,14 @@
+body {
+  background-color: grey;
+}
+#productContainer {
+  width: 80%;
+  height: auto;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  border-radius: 10px;
+  padding: 50px;
+  margin: auto;
+}

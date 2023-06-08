@@ -1,0 +1,59 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-color: rgba(6, 21, 72, 0.593);
+  overflow: hidden;
+}
+.div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.input {
+  display: block;
+  width: 70%;
+  padding: 0 5px;
+  border: 0;
+  height: 30px;
+  border-radius: 5px;
+}
+#root {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#form {
+  background-color: rgb(26, 59, 102);
+  flex-direction: column;
+  padding: 6%;
+  gap: 20px;
+  width: 60%;
+  height: 40%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+button {
+  border: 0;
+  height: 40px;
+  width: 90px;
+  border-radius: 4px;
+  color: white;
+  background-color: rgba(6, 15, 44, 0.593);
+}
+p {
+  background-color: rgb(186, 100, 100);
+  color: white;
+  text-align: center;
+}
+h4 {
+  background-color: aliceblue;
+  padding: 10px;
+}
