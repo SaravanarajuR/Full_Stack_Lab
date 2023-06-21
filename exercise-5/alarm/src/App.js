@@ -2,7 +2,12 @@ import { useEffect, useState } from "react";
 import sound from "./alarm.mp3";
 import "./index.css";
 import Send from "./getAlarms";
-import { checkalarm, addAlarm, handleClose } from "./alarmFunctions";
+import {
+  handleDelete,
+  checkalarm,
+  addAlarm,
+  handleClose,
+} from "./alarmFunctions";
 
 export default function App() {
   const audio = new Audio(sound);
@@ -29,16 +34,6 @@ export default function App() {
     setId(id);
     return clearInterval(intervalId);
   }, [alarm]);
-
-  function handleDelete(e) {
-    console.log(e);
-    const [day, index] = e.target.id.split("-");
-    const newAlarm = alarm;
-    newAlarm[`${day}`] = newAlarm[`${day}`].filter((k, ind) => {
-      return `${ind}` === index ? 0 : 1;
-    });
-    setAlarm(newAlarm);
-  }
 
   return (
     <div className="App" id="App">
@@ -90,7 +85,12 @@ export default function App() {
           X
         </button>
       </div>
-      <Send alarm={alarm} handleDelete={handleDelete} />
+      <Send
+        alarm={alarm}
+        handleDelete={(e) => {
+          handleDelete(e, alarm, setAlarm);
+        }}
+      />
     </div>
   );
 }

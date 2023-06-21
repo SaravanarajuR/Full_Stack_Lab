@@ -30,6 +30,15 @@ function addAlarm(e, alarm, setAlarm) {
   setAlarm(newAlarm);
 }
 
+function handleDelete(e, alarm, setAlarm) {
+  const [day, index] = e.target.id.split("-");
+  const newAlarm = alarm;
+  newAlarm[`${day}`] = newAlarm[`${day}`].filter((k, ind) => {
+    return `${ind}` === index ? 0 : 1;
+  });
+  setAlarm(newAlarm);
+}
+
 async function checkalarm(hrs, mins, day, alarm, audio) {
   if (alarm[`${day}`].includes(`${hrs}:${mins}`)) {
     const secs = new Date().getSeconds();
@@ -40,4 +49,4 @@ async function checkalarm(hrs, mins, day, alarm, audio) {
   }
 }
 
-export { checkalarm, addAlarm, handleClose };
+export { handleDelete, checkalarm, addAlarm, handleClose };
