@@ -27,45 +27,64 @@ class Student extends Component {
       mins += 15;
     }
     return slots.map((b, ind) => {
-      return <option value={ind}>{b}</option>;
+      console.log(this.props.booked[this.state.day], ind);
+      if (this.props.booked[this.state.day].includes(`${ind}`)) {
+        return (
+          <option value={ind} className="warning" disabled>
+            Booked already {b}
+          </option>
+        );
+      } else {
+        return <option value={ind}>{b}</option>;
+      }
     });
   };
   render() {
     return (
-      <div className="studentParent">
+      <form id="form" className="studentParent">
         <div className="input">
           <p>Member 1</p>
-          <input type="text" id="name1" placeholder="Name" />
-          <input type="text" id="rollno1" placeholder="Roll Number" />
+          <input type="text" id="name1" placeholder="Name" required />
+          <input type="text" id="rollno1" placeholder="Roll Number" required />
         </div>
         <div className="input">
           <p>Member 2</p>
-          <input type="text" id="name2" placeholder="Name" />
-          <input type="text" id="rollno2" placeholder="Roll Number" />
+          <input type="text" id="name2" placeholder="Name" required />
+          <input type="text" id="rollno2" placeholder="Roll Number" required />
         </div>
         <div className="input">
           <p>Member 3</p>
-          <input type="text" id="name3" placeholder="Name" />
-          <input type="text" id="rollno3" placeholder="Roll Number" />
+          <input type="text" id="name3" placeholder="Name" required />
+          <input type="text" id="rollno3" placeholder="Roll Number" required />
         </div>
         <div className="input">
-          <input placeholder="Project title" id="pname" />
+          <p>Project Details and Slot Booking</p>
+          <input placeholder="Project title" id="pname" required />
         </div>
-        <select onChange={this.changeDay}>
-          <option value=""></option>
+        <select id="day" onChange={this.changeDay} required>
+          <option value="">Choose a day</option>
           {this.handleDays()}
         </select>
         <div>
-          <select id="slots">
-            <option value=""></option>
+          <select id="slots" required>
+            <option value="">Choose a slot</option>
             {this.state.day !== "" ? this.handleSlots() : ""}
           </select>
         </div>
-        <div className="input">
+        <div className="inputBtn">
           <button onClick={this.props.logout}>Logout</button>
-          <button onClick={this.props.onSubmit}>submit</button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              this.props.onSubmit();
+            }}
+          >
+            submit
+          </button>
         </div>
-      </div>
+
+        <p id="error">Fill out all fields</p>
+      </form>
     );
   }
 }

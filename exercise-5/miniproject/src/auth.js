@@ -8,7 +8,7 @@ class Auth extends Component {
     this.state = {
       date: "",
       slots: [],
-      booked: [],
+      booked: { Monday: [], Wednesday: [], Thursday: [], Friday: [] },
       isAuthenticated: false,
       role: "",
       data: {},
@@ -57,28 +57,39 @@ class Auth extends Component {
   handleSubmit = () => {
     const data = this.state.data;
     const count = Object.keys(data).length;
-    const day = document.getElementById("day").value;
-    const time = document.getElementById("slots").value;
-    data[count] = {
-      mem1: {
-        name: document.getElementById("name1").value,
-        roll: document.getElementById("rollno1").value,
-      },
-      mem2: {
-        name: document.getElementById("name2").value,
-        roll: document.getElementById("rollno2").value,
-      },
-      mem3: {
-        name: document.getElementById("name3").value,
-        roll: document.getElementById("rollno3").value,
-      },
-      pname: document.getElementById("pname").value,
-      slot: "",
-    };
-    this.setState({
-      data: data,
-      booked: { ...this.state.booked, [`${day}`]: time },
-    });
+    try {
+      const day = document.getElementById("day").value;
+      const time = document.getElementById("slots").value;
+      data[count] = {
+        mem1: {
+          name: document.getElementById("name1").value,
+          roll: document.getElementById("rollno1").value,
+        },
+        mem2: {
+          name: document.getElementById("name2").value,
+          roll: document.getElementById("rollno2").value,
+        },
+        mem3: {
+          name: document.getElementById("name3").value,
+          roll: document.getElementById("rollno3").value,
+        },
+        pname: document.getElementById("pname").value,
+        slot: `${day}:${time}`,
+      };
+      document.getElementById("form").reset();
+      this.setState({
+        data: data,
+        booked: {
+          ...this.state.booked,
+          [`${day}`]: [...this.state.booked[`${day}`], time],
+        },
+      });
+    } catch (err) {
+      document.getElementById("error").style.visibility = "visible";
+      setTimeout(() => {
+        document.getElementById("error").style.visibility = "hidden";
+      }, 2000);
+    }
   };
 
   handleRender = () => {
@@ -91,10 +102,12 @@ class Auth extends Component {
         onSubmit={this.handleSubmit}
         slots={this.state.slots}
         details={this.state.slotDetails}
+        booked={this.state.booked}
       />
     );
   };
-  logout = () => {
+  logout = (e) => {
+    e.preventDefault();
     this.setState({ isAuthenticated: false });
   };
   handleChange(e) {
