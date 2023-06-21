@@ -33,9 +33,7 @@ function addAlarm(e, alarm, setAlarm) {
 function handleDelete(e, alarm, setAlarm) {
   const [day, index] = e.target.id.split("-");
   const newAlarm = alarm;
-  newAlarm[`${day}`] = newAlarm[`${day}`].filter((k, ind) => {
-    return `${ind}` === index ? 0 : 1;
-  });
+  newAlarm[`${day}`].splice(index, 1);
   setAlarm(newAlarm);
 }
 
