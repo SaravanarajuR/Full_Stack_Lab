@@ -100,3 +100,6 @@ option {
 #day {
   color: aliceblue;
 }
+select {
+  background-color: black;
+}

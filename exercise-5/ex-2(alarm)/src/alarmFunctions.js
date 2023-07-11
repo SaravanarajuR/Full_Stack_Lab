@@ -11,9 +11,7 @@ function addAlarm(e, alarm, setAlarm) {
   }`;
   if (day === "8") {
     for (let i of Object.keys(newAlarm)) {
-      if (newAlarm[`${i}`].includes(inputTime)) {
-        return null;
-      } else {
+      if (!newAlarm[`${i}`].includes(inputTime)) {
         newAlarm[`${i}`] = [...newAlarm[`${i}`], inputTime];
       }
     }
