@@ -19,5 +19,5 @@ document.addEventListener("submit", (evt) => {
   document.getElementById("new").value = 250;
   document.getElementById("fixed").value = 50;
   document.getElementById("subsidy").value = 0.0;
-  document.getElementById("net").value = charges - 250 + 50;
+  document.getElementById("net").value = units < 100 ? 0 : charges - 250 + 50;
 });

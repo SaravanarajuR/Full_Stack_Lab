@@ -1,9 +1,10 @@
+let orders = {};
+let i = 0;
+
 function handleRender() {
   document.getElementById("drop").innerHTML =
     "<option value=''>Choose</option>" + getValues().join("");
 }
-
-const orders={};
 
 function getValues() {
   return Object.keys(getCities()).map((k) => {
@@ -29,15 +30,21 @@ function chooseCity() {
 }
 
 function addOrder(evt) {
-  if(Number(document.getElementById("order").value)>getCities[document.getElementById("city").value]){
-    alert("order out of stock");
-  }else{
   evt.preventDefault();
-  orders[Object.keys(orders).length]={
-    name:document.getElementById("name").value,
-  address: document.getElementById("add").value,
-  quantity:document.getElementById("order").value
-}}
+  if (
+    Number(document.getElementById("order").value) >
+    getCities[document.getElementById("drop").value]
+  ) {
+    alert("order out of stock");
+  } else {
+    evt.preventDefault();
+    orders[i] = {
+      name: document.getElementById("name").value,
+      address: document.getElementById("add").value,
+      quantity: document.getElementById("order").value,
+    };
+    i++;
+  }
 }
 
 function getCities() {
@@ -52,8 +59,17 @@ function getCities() {
 }
 
 function handleSubmit(evt) {
-evt.preventDefault();
-  document.write("Order Submitted"+JSON.stringify(orders));
+  const view = document.getElementById("view");
+  view.style.visibility = "visible";
+  view.onclick = () => {
+    view.style.visibility = "hidden";
+  };
+  view.innerText = "";
+  view.innerText += "name\taddress\tcity\torders\n";
+  console.log(orders);
+  Object.keys(orders).map((k) => {
+    view.innerText += Object.values(orders[k]).join("\t") + "\n";
+    view.innerText += "\n";
+    return null;
+  });
 }
-
-window.addEventListener("submit", handleSubmit);
